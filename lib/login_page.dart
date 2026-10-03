@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'notes_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -101,6 +102,20 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: login,
                 child: const Text('Se connecter'),
               ),
+            ),
+
+            const SizedBox(height: 15),
+
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RegisterPage(),
+                  ),
+                );
+              },
+              child: const Text("S'inscrire"),
             ),
           ],
         ),
